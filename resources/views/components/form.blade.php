@@ -1,0 +1,7 @@
+<form {{ $attributes }}>
+
+    {{ $slot }}
+
+</form>
+
+

@@ -29,22 +29,16 @@ Route::get('test', [TestController::class, 'index']) -> name('test');//->middlew
 Route::middleware('guest') -> group(function() {
 
     Route::get('register', [RegisterController::class, 'index']) -> name('register');
-    Route::post('register', [RegisterController::class, 'store']) -> name('store');
+    Route::post('register', [RegisterController::class, 'store']) -> name('register.store');
 
 
     Route::get('login', [LoginController::class, 'index']) -> name('login')->middleware('guest')->withoutMiddleware('guest');
     Route::post('login', [LoginController::class, 'store']) -> name('login.store');
 });
 
-Route::get('register', [RegisterController::class, 'index']) -> name('register');
-Route::post('register', [RegisterController::class, 'store']) -> name('store');
-
-
-Route::get('login', [LoginController::class, 'index']) -> name('login')->middleware('guest');
-Route::post('login', [LoginController::class, 'store']) -> name('login.store')->middleware('guest');
 
 Route::get('blog', [BlogController::class, 'index']) -> name('blog');
-Route::get('blog/{post}', [BlogController::class, 'store']) -> name('blog.show');
+Route::get('blog/{post}', [BlogController::class, 'show']) -> name('blog.show');
 Route::post('register/{post}/like', [BlogController::class, 'store']) -> name('blog.like');
 
 
