@@ -12,4 +12,12 @@ class LoginController extends Controller
         return view('login.index');
 
     }
+
+    public function store()
+    {
+        return 'Запрос на вход';
+
+    }
+
+
 };

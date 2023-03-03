@@ -22,7 +22,7 @@
 
                 <li class="nav-item">
 
-                    <a href="{{route('home')}}" class="nav-link active" aria-current="page" >
+                    <a href="{{route('home')}}" class="nav-link {{Route::is('home') ? 'active' : ''}}" aria-current="page" >
 
                         {{__('Главная')}}
 
@@ -33,7 +33,7 @@
 
                 <li class="nav-item">
 
-                    <a href="{{route('blog')}}" class="nav-link active" aria-current="page" >
+                    <a href="{{route('blog')}}" class="nav-link {{Route::is('blog*') ? 'active' : ''}}" aria-current="page" >
 
                         {{__('Блог')}}
 
@@ -49,7 +49,7 @@
 
                 <li class="nav-item">
 
-                    <a href="{{route('register')}}" class="nav-link active" aria-current="page" >
+                    <a href="{{route('register')}}" class="nav-link {{Route::is('register') ? 'active' : ''}}" aria-current="page" >
 
                         {{__('Регистрация')}}
 
@@ -59,7 +59,7 @@
 
                 <li class="nav-item">
 
-                    <a href="{{route('login')}}" class="nav-link active" aria-current="page" >
+                    <a href="{{route('login')}}" class="nav-link {{Route::is('login') ? 'active' : ''}}" aria-current="page" >
 
                         {{__('Вход')}}
 

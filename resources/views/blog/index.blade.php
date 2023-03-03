@@ -1,11 +1,14 @@
-@extends('layouts.base')
+@extends('layouts.main')
 
-@section('content')
+@section('page.title', 'Наш блог')
 
-    <h1 class="mb-5">
-        Список постов
-    </h1>
+@section('main.content')
 
+    <x-title>
+
+        {{__('Список постов')}}
+
+    </x-title>
 
     @if(empty($posts))
 
@@ -13,23 +16,22 @@
 
     @else
 
-        @foreach($posts as $post)
+        <div class="row">
 
-            <div class="mb-4">
+            @foreach($posts as $post)
 
-                <h5>
-                    <a href="{{route('blog.show', $post->id)}}"> {{$post -> title}} {{$loop -> iteration}}</a>
-                </h5>
+                <div class="col-12 col-md-4">
 
-            </div>
+                    <x-post.card :post="$post" />
 
-            <p>
-                {!!$post->content !!}
-            </p>
+                </div>
 
-        @endforeach
+            @endforeach
+
+        </div>
 
     @endif
+
 
 @endsection
 

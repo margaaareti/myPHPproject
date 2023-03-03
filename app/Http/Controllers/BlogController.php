@@ -20,7 +20,7 @@ class BlogController extends Controller
 
         //dd($posts);
 
-        return view('blog.index', compact('posts'),);
+        return view('blog.index', compact('posts'));
 
     }
 

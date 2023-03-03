@@ -6,9 +6,11 @@
 use App\Http\Controllers\User\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('user')->as('user.')->middleware('auth')->group(function () {
+//Route::prefix('user')->as('user.')->middleware('auth', 'active')->group(function () {
+Route::prefix('user')->group(function () {
 
     Route::redirect('/', '/user/posts')->name('user');
+
 
     Route::get('posts', [PostController::class, 'index'])->name('user.posts');
 
@@ -24,6 +26,6 @@ Route::prefix('user')->as('user.')->middleware('auth')->group(function () {
 
     Route::delete('posts/{post}', [PostController::class, 'delete'])->name('user.posts.delete');
 
-    Route::delete('posts/{post}/like', [PostController::class, 'like'])->name('user.posts.like');
+    Route::put('posts/{post}/like', [PostController::class, 'like'])->name('user.posts.like');
 
 });
