@@ -35,7 +35,7 @@
 
                 <x-form-item>
                     <x-label required>{{__('Name')}}</x-label>
-                    <x-input name="email" autofocus></x-input>
+                    <x-input name="name" autofocus></x-input>
                 </x-form-item>
 
                 <x-form-item>
@@ -56,7 +56,7 @@
 
                 <x-form-item>
 
-                    <x-checkbox name="remember">
+                    <x-checkbox name="agreement">
 
                         {{__('Я согласен на обработку пользовательских данных')}}
 

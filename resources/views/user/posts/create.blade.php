@@ -18,7 +18,7 @@
     </x-title>
 
 
-   <x-post.form action="{{route('route.posts.store') }}" />
+   <x-post.form action="{{route('user.posts.store') }}" method="post" />
 
 
 @endsection

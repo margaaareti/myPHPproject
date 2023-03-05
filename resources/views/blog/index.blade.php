@@ -10,28 +10,34 @@
 
     </x-title>
 
-    @if(empty($posts))
 
-        Нет ни одного поста.
+  @include('blog.filter')
 
-    @else
 
-        <div class="row">
+    <div class="container mw-50" >
 
-            @foreach($posts as $post)
+        @if(empty($posts))
 
-                <div class="col-12 col-md-4">
+                 Нет ни одного поста.
 
-                    <x-post.card :post="$post" />
+            @else
 
-                </div>
+                 <div class="row">
 
-            @endforeach
+                     @foreach($posts as $post)
 
-        </div>
+                         <div class="col-12 col-md-4">
 
-    @endif
+                            <x-post.card :post="$post" />
 
+                         </div>
+
+                     @endforeach
+
+                 </div>
+
+         @endif
+    </div>
 
 @endsection
 

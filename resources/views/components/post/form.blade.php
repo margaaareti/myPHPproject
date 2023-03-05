@@ -1,6 +1,6 @@
 @props(['post' => null])
 
-<x-form {{$attributes}}" method="POST">
+<x-form {{ $attributes }}>
 
     <x-form-item>
 
@@ -13,7 +13,7 @@
     <x-form-item>
 
         <x-label required>{{ __('Содержание поста') }}</x-label>
-        <x-trix name="content" value="{{ $post->title ?? '' }}"></x-trix>
+        <x-trix name="content" value="{{ $post->content ?? '' }}"></x-trix>
 
     </x-form-item>
 

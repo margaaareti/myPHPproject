@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 
+use Illuminate\Http\Request;
+use function Symfony\Component\Translation\t;
 
 class PostController extends Controller
 {
@@ -58,12 +60,16 @@ class PostController extends Controller
             'content' => 'Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipisicing elit. Dolores, molestiae.',
         ];
 
-        return view('user.posts.edit', compact('post'));;
+        return view('user.posts.edit', compact('post'));
     }
 
-    public function update()
+    public function update(Request $request)
 
     {
+        $title= $request->input('title');
+        $content= $request->input('content');
+        dd($title,$content);
+
         return "Обновления страница";
     }
 
