@@ -28,7 +28,16 @@ class PostController extends Controller
     public function create()
 
     {
-        return view('user.posts.create');
+
+        $post = (object) [
+            'id' => 1,
+            'title' => 'Lorem ipsum dolor sit amet',
+            'content' => 'Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipisicing elit. Dolores, molestiae.',
+        ];
+
+        alert((__('Сохранено')));
+
+        return redirect()->route('user.posts.show', 123);
     }
 
     public function show($post): string
@@ -45,10 +54,15 @@ class PostController extends Controller
         return view('user.posts.show', compact('post'));
     }
 
-    public function store()
+    public function store(Request $request)
 
     {
-        return "Хранения страница";
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        alert(__('Сохранено'));
+
+        return redirect()->route('user.posts.show', 1 );
     }
 
     public function edit($post)
@@ -68,15 +82,16 @@ class PostController extends Controller
     {
         $title= $request->input('title');
         $content= $request->input('content');
-        dd($title,$content);
 
-        return "Обновления страница";
+
+        return back();
+
     }
 
-    public function delete()
+    public function delete($post)
 
     {
-        return "Удаления страница";
+        return redirect()->route('user.posts');
     }
 
     public function like()

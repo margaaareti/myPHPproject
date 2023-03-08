@@ -35,28 +35,28 @@
 
                 <x-form-item>
                     <x-label required>{{__('Name')}}</x-label>
-                    <x-input name="name" autofocus></x-input>
+                    <x-input name="name"  autofocus></x-input>
                 </x-form-item>
 
                 <x-form-item>
                     <x-label required>{{__('Email')}}</x-label>
-                    <x-input type="email" name="email"></x-input>
+                    <x-input type="email" name="email" ></x-input>
                 </x-form-item>
 
                 <x-form-item>
                     <x-label required>{{__('Password')}}</x-label>
-                    <x-input type="password" name="password" ></x-input>
+                    <x-input type="password"  name="password" ></x-input>
                 </x-form-item>
 
                 <x-form-item>
                     <x-label required>{{__('Password confirm')}}</x-label>
-                    <x-input type="password" name="password_confirmation" ></x-input>
+                    <x-input type="password"  name="password_confirmation" ></x-input>
                 </x-form-item>
 
 
                 <x-form-item>
 
-                    <x-checkbox name="agreement">
+                    <x-checkbox name="agreement" :checked="!! request()->old('agreement')">
 
                         {{__('Я согласен на обработку пользовательских данных')}}
 

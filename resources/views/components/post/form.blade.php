@@ -17,11 +17,7 @@
 
     </x-form-item>
 
-    <x-button type="submit">
-
-        {{__('Создать пост')}}
-
-    </x-button>
+   {{$slot}}
 
 </x-form>
 

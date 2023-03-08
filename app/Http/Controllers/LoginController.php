@@ -4,42 +4,42 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
 
     public function index(Request $request)
     {
 
-        //$ip = $request->ip();
-        //$path = $request->path();
-        //$url = $request->url();
-        //$full = $request->fullurl();
 
-        dd();
+        $foo = session('foo');
+
 
 
         return view('login.index');
 
     }
 
+
     public function store(Request $request)
     {
 
-        /*$ip = $request->ip();
-        $path = $request->path();
-        $url = $request->url();
 
-        dd($ip);*/
+        alert(__('Добро пожаловать'));
 
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $remember = $request->boolean('remember');
 
-        dd($email,$password,$remember);
-
-        return 'Запрос на вход';
+        return redirect()->route('user');
 
     }
 
-
 };
+
+
+//$ip = $request->ip();
+//$path = $request->path();
+//$url = $request->url();
+//$full = $request->fullurl();
+
+//$email = $request->input('email');
+//$password = $request->input('password');
+//$remember = $request->boolean('remember');

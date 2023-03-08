@@ -4,7 +4,7 @@
 
 <div class="form-check float-end">
 
-        <input type="checkbox" {{ $attributes->merge (['value' => 1]) }}, class=" form-check-input" id="{{$id}}" >
+        <input type="checkbox" {{ $attributes->merge (['value' => 1, 'checked'=> 'false']) }}, class=" form-check-input" id="{{$id}}" >
 
 
         <label class="form-check-label" for="{{$id}}">
