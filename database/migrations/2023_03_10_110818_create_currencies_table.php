@@ -11,11 +11,17 @@ class CreateCurrenciesTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('currencies', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->unique();
             $table->timestamps();
+
+            $table->string('name');
+            $table->decimal('price')->unsigned();
+            $table->boolean('active')->default(true);
+            $table->integer('sort')->unsigned()->default(999);
         });
     }
 
@@ -24,6 +30,7 @@ class CreateCurrenciesTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('currencies');

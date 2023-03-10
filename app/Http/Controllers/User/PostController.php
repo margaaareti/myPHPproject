@@ -57,8 +57,16 @@ class PostController extends Controller
     public function store(Request $request)
 
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
+
+        $validator = validator($request->all(), [
+
+        ]);
+
+
+        $validated= $validator->validate();
+
+
+
 
         alert(__('Сохранено'));
 
